@@ -31,7 +31,9 @@ GOOGLE_API_KEY=your-google-api-key-here
 ## Run
 
 ```bash
-uv run main.py
+uv run langchain_routing.py         # LangChain version
+uv run python -m adk_routing.agent   # Google ADK version
+uv run adk web                       # ADK browser UI (select adk_routing)
 ```
 
 The program processes three examples in order:
@@ -66,7 +68,7 @@ The data passed to handler selection has this shape:
 
 ## Code organization
 
-All application code is in `main.py`:
+The LangChain version is in `langchain_routing.py`:
 
 - `RoutingDecision` defines the routing response schema.
 - The three handler functions simulate specialist behavior.
@@ -80,7 +82,8 @@ To experiment, edit the `requests` list, adjust the routing prompt, or change th
 
 | File | Purpose |
 | --- | --- |
-| `main.py` | Application code and example requests |
+| `langchain_routing.py` | LangChain routing example and example requests |
+| `adk_routing/agent.py` | Google ADK routing example (coordinator with sub-agents) |
 | `.env.example` | Environment configuration template |
 
 After editing dependencies in `pyproject.toml`, run `uv sync` to update the lockfile and environment. You can also use `uv add package-name` or `uv remove package-name` to manage dependencies directly.
