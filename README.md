@@ -4,6 +4,8 @@ A small Python learning project that uses Gemini to classify a request and route
 
 The routing decision comes from a real Gemini API call. The handlers return demonstration messages; they do not make bookings or retrieve information.
 
+Following along tutorial in Agentic Design Patterns / Antonio Gulli.
+
 ## Setup
 
 You need uv, Python 3.12 or newer, and a Google API key with access to the configured Gemini model.
